@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class HabitTile extends StatefulWidget {
   final String habitName;
@@ -45,9 +46,9 @@ class _HabitTileState extends State<HabitTile> {
           )
         ]),
         child: Container(
-          padding: EdgeInsets.all(24),
+          padding: EdgeInsets.all(20),
           decoration: BoxDecoration(
-            color: Colors.grey[100],
+            color: widget.isCompleted ? Colors.green[300] : Colors.grey[100],
             borderRadius: BorderRadius.circular(12),
           ),
           child: Row(
@@ -59,7 +60,11 @@ class _HabitTileState extends State<HabitTile> {
               ),
 
               //Habit name
-              Text(widget.habitName),
+              Text(
+                widget.habitName,
+                style: GoogleFonts.playfairDisplay(
+                    fontSize: 16, fontWeight: FontWeight.w600),
+              ),
             ],
           ),
         ),
